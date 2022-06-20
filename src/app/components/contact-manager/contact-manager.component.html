@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="h3">My Contact App</p>
+            <a routerLink="/contacts/add" type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add new Contact</a>
+            <p class="fst-italic mt-1">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque eveniet veritatis quas eaque! Totam quod incidunt repellendus consequuntur quo magnam pariatur quae quidem minima unde! Praesentium dolorum fuga consequuntur illo.
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="seach contact" [(ngModel)]="searchText">
+                </div>
+                <!-- <div class="col-md-6">
+                    <input type="submit" class="btn btn-outline-dark" value="search">
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Card Design -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card list-group-item-success align-item-center">
+                <div class="card-body">
+                    <div class="row mb-4 line" *ngFor="let data of myData | searchFilter:searchText">
+                        <div class="col-md-4">
+                            <img [src]="data.photo" class="contact-img">
+                        </div>
+                        <div class="col-md-7">
+                            <ul class="list-group">
+                                <li class="list-group-item">Name:<span class="fw-bold">{{ data.name }}</span></li>
+                                <li class="list-group-item mt-1">Email:<span class="fw-bold">{{ data.email }}</span></li>
+                                <li class="list-group-item mt-1">Mobile:<span class="fw-bold">{{ data.mobile }}</span></li>
+                                <li class="list-group-item mt-1">Company:<span class="fw-bold">{{ data.company }}</span></li>
+                                <li class="list-group-item mt-1">Group:<span class="fw-bold">{{ data.groupId }}</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-1 d-flex flex-column justify-content-center">
+                            <a [routerLink]="['/contacts/view/', data.id]"><i class="fa fa-eye btn btn-warning"></i></a>
+                            <a [routerLink]="['/contacts/edit/', data.id]"><i class="fa fa-pen btn btn-success mt-1"></i></a>
+                            <a (click)="deleteContact(data.id)"><i class="fa fa-trash btn btn-danger mt-1"></i></a>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <p class="h3 fw-bold text-primary">
+                <i class="fa fa-pen"></i>&nbsp; Add new Contact
+            </p>
+            <p class="fst-italic">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis voluptates placeat enim ipsa vel vitae accusamus optio quia, error quos sint mollitia ullam quidem amet necessitatibus doloremque atque repellendus? Officia.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Edit contact form -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-sm-4">
+            <form [formGroup]="myCont" (ngSubmit)="AddNewContact()">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" name="name" formControlName="name">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Email" name="email" formControlName="email">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Photo" name="photo" formControlName="photo">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Mobile" name="mobile" formControlName="mobile">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Company" name="company" formControlName="company">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Title" name="title" formControlName="title">
+                </div>
+                <div class="mb-3">
+                    <select class="form-control">
+                        <option value="">Select a Group</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" class="btn btn-primary" value="Add Contact">
+                    <a routerLink="/" class="btn btn-warning mx-2">Close</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <img src="https://i.pinimg.com/736x/64/81/22/6481225432795d8cdf48f0f85800cf66.jpg" class="contact-img">
+        </div>
+    </div>
+</div>
